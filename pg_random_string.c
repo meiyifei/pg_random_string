@@ -12,7 +12,7 @@ random_string(PG_FUNCTION_ARGS)
 {
 	int i,ch,tmp;
 	short int arg1=PG_GETARG_INT32(0);
-	char arry[arg1];
+	char* arry=(char*)malloc(sizeof(char)*arg1);
 	srand(time(NULL));
 	for(i=0;i<arg1;i++)
 	{
